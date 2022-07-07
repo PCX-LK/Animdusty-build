@@ -8,7 +8,7 @@ on:
 
 jobs:
   Build_Android:
-    runs-on: Debian-latest
+    runs-on: Ubuntu-latest
     steps:
       - name: os fetch
         run: |

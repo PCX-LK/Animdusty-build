@@ -32,14 +32,11 @@ jobs:
           sudo apt install nim -y
       - name: Set Up
         run: |
-          export PATH="~/.nimble/bin:$PATH"
-          source ~/.bashrc
           cd animbean
           nimble install -y -d
+          ln -s /home/runner/.nimble/bin/* /home/runner/.local/bin
       - name: Build Android
         run: |
-          export PATH="~/.nimble/bin:$PATH"
-          source ~/.bashrc
           cd animbean
           nimble androidPackage
       - name: Upload to Build branch

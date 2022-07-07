@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Build OSX:
+  Build_OSX:
     runs-on: macos-latest
     steps:
       - name: Export env

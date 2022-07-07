@@ -18,18 +18,13 @@ jobs:
         run: |
           git clone --recursive https://github.com/PCX-LK/animbean
       - name: Nim
-        run: |
-          brew install nim
+        uses: iffy/install-nim@v4.1.3
       - name: Set Up
         run: |
-          export PATH="~/.nimble/bin:$PATH"
-          source ~/.bashrc
           cd animbean
           nimble install -y -d
       - name: Build Mac
         run: |
-          export PATH="~/.nimble/bin:$PATH"
-          source ~/.bashrc
           cd animbean
           nimble deploy
       - name: Upload to Build branch

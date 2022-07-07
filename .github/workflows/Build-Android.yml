@@ -25,8 +25,8 @@ jobs:
         uses: android-actions/setup-android@v2
       - name: Setup NDK
         uses: nttld/setup-ndk@v1
-          with:
-           ndk-version: r21e
+        with:
+          ndk-version: r21e
       - name: Nim
         run: |
           sudo apt install nim -y

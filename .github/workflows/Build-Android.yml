@@ -28,13 +28,11 @@ jobs:
         with:
           ndk-version: r21e
       - name: Nim
-        run: |
-          sudo apt install nim -y
+        uses: iffy/install-nim@v4.1.3
       - name: Set Up
         run: |
           cd animbean
           nimble install -y -d
-          ln -s /home/runner/.nimble/bin/* /home/runner/.local/bin
       - name: Build Android
         run: |
           cd animbean

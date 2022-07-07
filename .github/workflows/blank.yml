@@ -9,9 +9,6 @@ on:
 jobs:
   Build_OSX:
     runs-on: macos-latest
-    env: 
-      PRurl: https://github.com/PCX-LK/animbean
-      PRname: animbean
     steps:
       - name: os fetch
         run: |
@@ -19,7 +16,7 @@ jobs:
           neofetch
       - name: clone
         run: |
-          git clone --recursive $PRurl
+          git clone --recursive https://github.com/PCX-LK/animbean
       - name: Nim
         run: |
           brew install nim
@@ -27,19 +24,19 @@ jobs:
         run: |
           export PATH="~/.nimble/bin:$PATH"
           source ~/.bashrc
-          cd $PRname
+          cd animbean
           nimble install -y -d
       - name: Build Mac
         run: |
           export PATH="~/.nimble/bin:$PATH"
           source ~/.bashrc
-          cd $PRname
+          cd animbean
           nimble deploy
       - name: Upload to Build branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: Build
-          build_dir: ./$PRname/build
+          build_dir: ./animbean/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           

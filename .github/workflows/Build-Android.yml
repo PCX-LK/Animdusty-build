@@ -40,7 +40,7 @@ jobs:
       - name: Upload to Build branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
-          target_branch: Build
+          target_branch: build-android
           build_dir: ./animbean/android/build/outputs/apk/debug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

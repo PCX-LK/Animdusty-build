@@ -1,4 +1,4 @@
-name: Build Androis
+name: Build Android
 
 on:
   push:
@@ -10,10 +10,10 @@ jobs:
   Build_Android:
     runs-on: Debian-latest
     steps:
-#      - name: os fetch
-#          run: |
-#            sudo apt install neofetch -y
-#            neofetch
+      - name: os fetch
+          run: |
+            sudo apt install neofetch -y
+            neofetch
       - name: clone
           run: |
             git clone --recursive https://github.com/PCX-LK/animbean

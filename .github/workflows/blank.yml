@@ -9,11 +9,12 @@ on:
 jobs:
   Build OSX:
     runs-on: macos-latest
-    env:
-      SB: testing
     steps:
+      - name: Export env
+        run: |
+          export SB=Testing
       - name: os fetch
-        run : |
+        run: |
           brew install neofetch
           neofetch
           echo $SB

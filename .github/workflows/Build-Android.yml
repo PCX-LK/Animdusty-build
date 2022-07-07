@@ -8,12 +8,12 @@ on:
 
 jobs:
   Build_Android:
-    runs-on: Ubuntu-latest
+    runs-on: Debian-latest
     steps:
-      - name: os fetch
-          run: |
-            sudo apt install neofetch -y
-            neofetch
+#      - name: os fetch
+#          run: |
+#            sudo apt install neofetch -y
+#            neofetch
       - name: clone
           run: |
             git clone --recursive https://github.com/PCX-LK/animbean

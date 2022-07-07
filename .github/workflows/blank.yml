@@ -7,13 +7,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  Build:
+  Build OSX:
     runs-on: macos-latest
+    env:
+      SB: testing
     steps:
       - name: os fetch
         run : |
           brew install neofetch
           neofetch
+          echo $SB
       - name: clone
         run: |
           git clone --recursive https://github.com/Anuken/animdustry

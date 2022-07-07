@@ -1,4 +1,4 @@
-name: Build_OSX
+name: Build OSX
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: Upload to Build branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
-          target_branch: Build
+          target_branch: build-osx
           build_dir: ./animbean/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

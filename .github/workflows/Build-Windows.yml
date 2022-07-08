@@ -23,6 +23,12 @@ jobs:
         run: |
           cd animbean
           nimble install -y -d
+      - name: gccccccccc-plus+++++ mingw w64
+        run: |
+          sudo apt install gcc-mingw-w64 -y
+          apt moo
+          apt moo moo
+          apt moo moo moo
       - name: Build Windows
         run: |
           cd animbean

@@ -23,7 +23,7 @@ jobs:
         run: |
           cd animbean
           nimble install -y -d
-      - name: Build Android
+      - name: Build Windows
         run: |
           cd animbean
           nimble deploy win

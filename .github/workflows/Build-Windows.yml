@@ -1,4 +1,4 @@
-name: Build OSX
+name: Build Windows
 
 on:
   push:
@@ -7,13 +7,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  Build_OSX:
-    runs-on: macos-latest
+  Build_Windows:
+    runs-on: windows-latest
     steps:
-      - name: os fetch
-        run: |
-          brew install neofetch
-          neofetch
       - name: clone
         run: |
           git clone --recursive https://github.com/PCX-LK/animbean
@@ -23,14 +19,14 @@ jobs:
         run: |
           cd animbean
           nimble install -y -d
-      - name: Build Mac
+      - name: Build Windows
         run: |
           cd animbean
           nimble deploy
       - name: Upload to Build branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
-          target_branch: build-osx
+          target_branch: build-windows
           build_dir: ./animbean/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -8,24 +8,25 @@ on:
 
 jobs:
   Build_Windows:
-    runs-on: windows-latest
+    runs-on: Ubuntu-latest
     steps:
+      - name: os fetch
+        run: |
+          sudo apt install neofetch -y
+          neofetch
       - name: clone
         run: |
           git clone --recursive https://github.com/PCX-LK/animbean
       - name: Nim
-        uses: alaviss/setup-nim@0.1.1
-        with:
-          path: 'nim'
-          version: devel
+        uses: iffy/install-nim@v4.1.3
       - name: Set Up
         run: |
           cd animbean
           nimble install -y -d
-      - name: Build Windows
+      - name: Build Android
         run: |
           cd animbean
-          nimble deploy
+          nimble deploy win
       - name: Upload to Build branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
@@ -33,4 +34,3 @@ jobs:
           build_dir: ./animbean/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          

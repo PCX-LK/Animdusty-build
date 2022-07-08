@@ -25,7 +25,7 @@ jobs:
           nimble install -y -d
       - name: g+++++++ with gccccccccc-plus+++++ mingw w64
         run: |
-          sudo apt install gcc-mingw-w64 g++ -y
+          sudo apt install gcc-mingw-w64 g++-10 -y
           apt moo
           apt moo moo
           apt moo moo moo
